@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: result
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_DB
+          value: postgres
+        - name: POSTGRES_DNS
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: POSTGRES_USER
+          value: postgres
+        image: result
+        name: result
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+status: {}

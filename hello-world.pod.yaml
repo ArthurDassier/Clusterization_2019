@@ -1,0 +1,15 @@
+# hello -world.pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+spec:
+  containers:
+    - name: hello-world
+      image: samber/hello-world-nodejs
+      ports:
+        - containerPort: 8080
+      env:
+      - name: PORT
+        value: "8080"
