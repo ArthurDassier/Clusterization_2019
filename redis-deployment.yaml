@@ -10,7 +10,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: redis:alpine
+      - image: redis:5.0
         name: redis
         resources: {}
       restartPolicy: Always
