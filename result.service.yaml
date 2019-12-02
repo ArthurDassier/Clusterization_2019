@@ -4,8 +4,9 @@ metadata:
   name: result
 spec:
   ports:
-  - name: "5001"
+  - protocol: TCP
+    name: "5001"
     port: 5001
     targetPort: 80
-status:
-  loadBalancer: {}
+  selector:
+    name: result
