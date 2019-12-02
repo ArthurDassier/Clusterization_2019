@@ -1,13 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: poll
+  labels:
+    name: poll
 spec:
   replicas: 1
-  strategy: {}
+  selector:
+    matchLabels:
+      name: poll
   template:
     metadata:
-      creationTimestamp: null
+      labels:
+        name: poll
     spec:
       containers:
       - env:
@@ -15,10 +20,10 @@ spec:
           value: redis
         - name: REDIS_PORT
           value: "80"
-        image: poll
+        image: epitechcontent/t-dop-600-poll:k8s
         name: poll
         ports:
         - containerPort: 80
-        resources: {}
+          protocol: TCP
       restartPolicy: Always
 status: {}

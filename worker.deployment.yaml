@@ -1,13 +1,16 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: worker
 spec:
   replicas: 1
-  strategy: {}
+  selector:
+    matchLabels:
+      name: worker
   template:
     metadata:
-      creationTimestamp: null
+      labels:
+        name: worker
     spec:
       containers:
       - env:
@@ -23,8 +26,7 @@ spec:
           value: redis
         - name: REDIS_PORT
           value: "80"
-        image: worker
+        image: epitechcontent/t-dop-600-worker:k8s
         name: worker
-        resources: {}
       restartPolicy: Always
 status: {}

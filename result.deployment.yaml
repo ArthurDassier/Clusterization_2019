@@ -1,13 +1,16 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: result
 spec:
   replicas: 1
-  strategy: {}
+  selector:
+    matchLabels:
+      name: result
   template:
     metadata:
-      creationTimestamp: null
+      labels:
+        name: result
     spec:
       containers:
       - env:
@@ -19,10 +22,9 @@ spec:
           value: password
         - name: POSTGRES_USER
           value: postgres
-        image: result
+        image: epitechcontent/t-dop-600-result:k8s
         name: result
         ports:
         - containerPort: 80
-        resources: {}
       restartPolicy: Always
 status: {}
