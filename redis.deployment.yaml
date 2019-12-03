@@ -9,15 +9,13 @@ spec:
   selector:
     matchLabels:
       name: redis
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         name: redis
     spec:
       containers:
-      - image: redis
+      - image: redis:5.0
         name: redis
         ports:
         - containerPort: 6379
