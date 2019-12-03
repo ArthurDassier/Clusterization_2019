@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: poll
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
@@ -11,4 +11,4 @@ spec:
         - path: /
           backend:
             serviceName: poll
-            servicePort: 5000
+            servicePort: 80
