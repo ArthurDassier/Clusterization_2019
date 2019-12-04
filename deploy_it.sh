@@ -30,3 +30,9 @@ echo -e "\nCreating redis ...\n"
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.configmap.yaml
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.deployment.yaml
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.service.yaml
+
+echo -e "\nCreating traefik ...\n"
+
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f traefik.rbac.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f traefik.deployment.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f traefik.service.yaml

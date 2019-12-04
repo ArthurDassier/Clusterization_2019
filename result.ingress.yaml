@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: result
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
   - http:

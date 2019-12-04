@@ -21,11 +21,11 @@ spec:
             configMapKeyRef:
               name: postgres-config
               key: POSTGRES_DB
-        - name: POSTGRES_DNS
+        - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
               name: postgres-config
-              key: POSTGRES_DNS
+              key: POSTGRES_HOST
         - name: POSTGRES_PASSWORD
           valueFrom:
             configMapKeyRef:
@@ -36,6 +36,11 @@ spec:
             configMapKeyRef:
               name: postgres-config
               key: POSTGRES_USER
+        - name: POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PORT
         image: epitechcontent/t-dop-600-result:k8s
         name: result
         ports:
