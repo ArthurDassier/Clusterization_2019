@@ -5,7 +5,7 @@ metadata:
   labels:
     name: result
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       name: result
@@ -14,7 +14,6 @@ spec:
       labels:
         name: result
     spec:
-      nodeName: pool-axyjn0cfm-tg2k
       containers:
       - env:
         - name: POSTGRES_DB

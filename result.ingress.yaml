@@ -11,4 +11,4 @@ spec:
         - path: /
           backend:
             serviceName: result
-            servicePort: 5001
+            servicePort: 80
