@@ -14,7 +14,16 @@ spec:
       labels:
         name: poll
     spec:
-      nodeName: pool-axyjn0cfm-tg2h
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - result
+            topologyKey: failure-domain.beta.kubernetes.io/zone
       containers:
       - env:
         - name: REDIS_HOST

@@ -9,4 +9,4 @@ spec:
     targetPort: 6379
   selector:
     name: redis
-  type: ClusterIP
+  type: NodePort
