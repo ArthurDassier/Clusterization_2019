@@ -10,6 +10,14 @@ echo -e "Creating poll ...\n"
 # kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f poll.service.yaml
 # kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f poll.ingress.yaml
 
+echo -e "Creating postgres ...\n"
+
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f postgres.secret.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f postgres.configmap.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f postgres.volume.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f postgres.deployment.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f postgres.service.yaml
+
 echo -e "\nCreating result ...\n"
 
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f result.deployment.yaml

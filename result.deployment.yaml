@@ -17,13 +17,25 @@ spec:
       containers:
       - env:
         - name: POSTGRES_DB
-          value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DB
         - name: POSTGRES_DNS
-          value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DNS
         - name: POSTGRES_PASSWORD
-          value: password
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PASSWORD
         - name: POSTGRES_USER
-          value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_USER
         image: epitechcontent/t-dop-600-result:k8s
         name: result
         ports:
