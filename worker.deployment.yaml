@@ -15,18 +15,39 @@ spec:
       containers:
       - env:
         - name: POSTGRES_DB
-          value: postgres
-        - name: POSTGRES_DNS
-          value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DB
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_HOST
         - name: POSTGRES_PASSWORD
-          value: password
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PASSWORD
         - name: POSTGRES_USER
-          value: postgres
-        - name: REDIS_HOSTNAME
-          value: redis
-        - name: REDIS_PORT
-          value: "80"
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_USER
+        - name: POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PORT
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: redis
+              key: hostname
         image: epitechcontent/t-dop-600-worker:k8s
         name: worker
+        resources:
+          limits:
+            memory: 256Mi
       restartPolicy: Always
 status: {}
