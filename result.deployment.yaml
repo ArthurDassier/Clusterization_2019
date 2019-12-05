@@ -16,31 +16,35 @@ spec:
     spec:
       containers:
       - env:
-        - name: POSTGRES_DB
-          valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: POSTGRES_DB
         - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
               name: postgres-config
               key: POSTGRES_HOST
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: POSTGRES_PASSWORD
-        - name: POSTGRES_USER
-          valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: POSTGRES_USER
+
         - name: POSTGRES_PORT
           valueFrom:
             configMapKeyRef:
               name: postgres-config
               key: POSTGRES_PORT
+
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DB
+
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_USER
+
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PASSWORD
         image: epitechcontent/t-dop-600-result:k8s
         name: result
         ports:
@@ -50,4 +54,4 @@ spec:
           limits:
             memory: 128Mi
       restartPolicy: Always
-
+status: {}

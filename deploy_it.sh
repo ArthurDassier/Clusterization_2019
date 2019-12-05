@@ -18,7 +18,7 @@ kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.conf
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.deployment.yaml
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f redis.service.yaml
 
-echo -e "Creating poll ...\n"
+echo -e "\nCreating poll ...\n"
 
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f poll.deployment.yaml
 kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f poll.service.yaml

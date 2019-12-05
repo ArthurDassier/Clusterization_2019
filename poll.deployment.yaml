@@ -14,16 +14,6 @@ spec:
       labels:
         name: poll
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values:
-                - result
-            topologyKey: failure-domain.beta.kubernetes.io/zone
       containers:
       - env:
         - name: REDIS_HOST

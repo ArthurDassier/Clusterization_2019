@@ -7,7 +7,4 @@ spec:
   - name: "5432"
     port: 5432
     targetPort: 5432
-  selector:
-    name: postgres
-  type: NodePort
 
