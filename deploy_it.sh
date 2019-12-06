@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# echo -e "Scheduling cadvisor on all nodes ...\n"
+echo -e "Scheduling cadvisor on all nodes ...\n"
 
-# kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f cadvisor.daemonset.yaml
+kubectl --kubeconfig="dopclusterization2019-kubeconfig.yaml" apply -f cadvisor.daemonset.yaml
 
 echo -e "Creating postgres ...\n"
 

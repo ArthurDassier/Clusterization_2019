@@ -34,15 +34,15 @@ spec:
 
         - name: POSTGRES_USER
           valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: POSTGRES_USER
+            secretKeyRef:
+              name: postgres-secret
+              key: username
 
         - name: POSTGRES_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: postgres-config
-              key: POSTGRES_PASSWORD
+            secretKeyRef:
+              name: postgres-secret
+              key: password
 
         - name: REDIS_HOST
           valueFrom:
