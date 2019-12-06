@@ -4,12 +4,12 @@ metadata:
   name: result
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - http:
+  - host: result.dop.io
+    http:
       paths:
-        - path: /result.dop.io
+        - path: /
           backend:
             serviceName: result
-            servicePort: 80
+            servicePort: http

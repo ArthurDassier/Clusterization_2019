@@ -4,12 +4,12 @@ metadata:
   name: poll
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
-  - http:
+  - host: poll.dop.io
+    http:
       paths:
-        - path: /poll.dop.io
+        - path: /
           backend:
             serviceName: poll
-            servicePort: 80
+            servicePort: http

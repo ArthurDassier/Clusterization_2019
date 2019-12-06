@@ -4,7 +4,7 @@ metadata:
   name: poll
 spec:
   ports:
-  - protocol: TCP
+  - name: http
     port: 80
     targetPort: 80
   selector:

@@ -25,7 +25,6 @@ spec:
         name: poll
         ports:
         - containerPort: 80
-          protocol: TCP
         resources:
           limits:
             memory: 128Mi
