@@ -28,5 +28,15 @@ spec:
         resources:
           limits:
             memory: 128Mi
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - result
+            topologyKey: kubernetes.io/hostname
       restartPolicy: Always
 status: {}
