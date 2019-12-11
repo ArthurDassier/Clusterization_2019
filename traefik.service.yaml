@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: traefik-ingress-service
-  namespace: kube-system
+  namespace: default
 spec:
   selector:
     k8s-app: traefik-ingress-lb
@@ -18,33 +18,3 @@ spec:
       nodePort: 30042
       name: admin
   type: NodePort
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: traefik-web-ui
-#   namespace: kube-system
-# spec:
-#   selector:
-#     k8s-app: traefik-ingress-lb
-#   ports:
-#   - port: 80
-#     targetPort: 8080
-#     nodePort: 30042
-#   type: NodePort
-# ---
-# apiVersion: extensions/v1beta1
-# kind: Ingress
-# metadata:
-#   name: traefik-web-ui
-#   namespace: kube-system
-#   annotations:
-#     kubernetes.io/ingress.class: traefik
-# spec:
-#   rules:
-#   - http:
-#       paths:
-#       - path:
-#         backend:
-#           serviceName: traefik-web-ui
-#           servicePort: 30042

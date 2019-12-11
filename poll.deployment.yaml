@@ -20,7 +20,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: redis
-              key: hostname
+              key: REDIS_HOST
         image: epitechcontent/t-dop-600-poll:k8s
         name: poll
         ports:

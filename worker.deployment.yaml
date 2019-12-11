@@ -36,19 +36,19 @@ spec:
           valueFrom:
             secretKeyRef:
               name: postgres-secret
-              key: username
+              key: POSTGRES_USER
 
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgres-secret
-              key: password
+              key: POSTGRES_PASSWORD
 
         - name: REDIS_HOST
           valueFrom:
             configMapKeyRef:
               name: redis
-              key: hostname
+              key: REDIS_HOST
         image: epitechcontent/t-dop-600-worker:k8s
         name: worker
         resources:

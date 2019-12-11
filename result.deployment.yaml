@@ -38,13 +38,13 @@ spec:
           valueFrom:
             secretKeyRef:
               name: postgres-secret
-              key: username
+              key: POSTGRES_USER
 
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgres-secret
-              key: password
+              key: POSTGRES_PASSWORD
         image: epitechcontent/t-dop-600-result:k8s
         name: result
         ports:
