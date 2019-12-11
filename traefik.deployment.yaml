@@ -36,4 +36,17 @@ spec:
         - --api
         - --kubernetes
         - --logLevel=INFO
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                  - result
+                  - poll
+              topologyKey: kubernetes.io/hostname
       restartPolicy: Always
