@@ -1,4 +1,4 @@
-# Dashboard
+# Clusterization
 
 This project aims to teach you how to deploy in a cluster using Kubernetes along with how to use Traefik asa reverse proxy and load balancer.
 
