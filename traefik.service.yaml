@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: traefik-ingress-service
-  namespace: default
+  namespace: kube-public
 spec:
   selector:
     k8s-app: traefik-ingress-lb
