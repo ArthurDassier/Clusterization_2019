@@ -7,5 +7,5 @@ The application you are working on during this project is a simple poll web appl
 ## Group members
 
 camille.bouzerand@epitech.eu
-the.dedieu@epitech.eu
+theo.dedieu@epitech.eu
 arthur.dassier@epitech.eu
