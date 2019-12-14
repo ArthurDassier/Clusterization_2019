@@ -15,12 +15,9 @@ spec:
         name: poll
     spec:
       containers:
-      - env:
-        - name: REDIS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: redis
-              key: REDIS_HOST
+      - envFrom:
+        - configMapRef:
+            name: redis
         image: epitechcontent/t-dop-600-poll:k8s
         name: poll
         ports:
